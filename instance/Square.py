@@ -1,3 +1,3 @@
 import Area
-class Rectangle(Area):
+class Square(Area):
     bounds = 
