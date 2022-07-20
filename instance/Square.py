@@ -15,7 +15,7 @@ class Square(Area):
                                                 self.positions[1,:], 
                                                 origin[0],origin[1])
 
-        #self.plot(self.positions[0,:],self.positions[1,:], 2*L)
+        self.plot(self.positions[0,:],self.positions[1,:], 2*L)
 
 
     def plot(self, x, y, L):
@@ -23,3 +23,4 @@ class Square(Area):
         rectangle = plt.Rectangle((-L/2,-L/2), L, L, fc="none",ec="black", linewidth=3)
         plt.gca().add_patch(rectangle)
         plt.show()
+        plt.savefig(self.name + '.png')

@@ -2,9 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class Area:
-    R = 6371.0        #earth radius, may vary, very high accuracy not important 
-    def __init__(self, seed, ncoords, origin, scale_factor, L):
-        self.seed = seed    
+    R = 6371.0        #earth radius [km], may vary, very high accuracy not important 
+    def __init__(self, name, ncoords, origin, scale_factor, L):
+        self.name = name    
         #number of coordinates to be displaced in the area with the given seed
         self.ncoords = ncoords    
         self.origin = origin    #center of the area 
@@ -32,13 +32,13 @@ class Area:
 
     #distance between 2 points with given latitude and longitude coords
     def archaversine(self,lat0,long0,lat,long):
-        d = 2*R*np.arcsin(np.sqrt(np.square(np.sin((lat-lat0)/2)) 
+        d = 2*self.R*np.arcsin(np.sqrt(np.square(np.sin((lat-lat0)/2)) 
             + np.cos(lat0) * np.cos(lat) * np.square((long - long0)/2) ))
         return d    #kilometers
 
     def latlongfromdistance(self,x,y,lat0,long0):
-        long  = np.rad2deg((x / (self.R * 10**3))) + long0 #degrees
-        lat   = np.rad2deg((y / (self.R * 10**3))) + lat0  #degrees
+        long  = np.rad2deg(x / (self.R )) + long0 #degrees
+        lat   = np.rad2deg(y / (self.R )) + lat0  #degrees
         coords = np.array([lat,long]).transpose()
         return coords
 

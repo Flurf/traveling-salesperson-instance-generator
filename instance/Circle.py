@@ -18,11 +18,16 @@ class Circle(Area):
                                                 self.positions[1,:], 
                                                 origin[0],origin[1])
         print(self.geocoord)
-        #self.plot(self.positions[0,:],self.positions[1,:], L)
+        self.plot(self.positions[0,:],self.positions[1,:], L)
 
 
     def plot(self, x, y, R):
         super().plot(x, y)
         circle = plt.Circle((0,0), R, fc="none",ec="black", linewidth=3)
         plt.gca().add_patch(circle)
+        axlim = R*(1+0.03)
+        plt.xlim([-axlim, axlim])
+        plt.ylim([-axlim, axlim])
+        plt.savefig(self.name + '.png', transparent=True)
         plt.show()
+        
