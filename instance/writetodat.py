@@ -8,6 +8,7 @@ def writetodat(filename,params):
     for i in params:
         if i[0].ndim == 0:
             f.write(param + i[1]  + defas + str(i[0]) + ';\n\n')
+            
         elif i[0].ndim == 1:
             f.write(param + i[1] + defas  + '\n')
             for j in range(i[0].size):
