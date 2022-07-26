@@ -4,13 +4,20 @@ import googlemaps
 class Graph:
     gmaps = googlemaps.Client(key='AIzaSyCu-ipThu3ZSWXvPT_e0NaS4Bp5dsJnzOQ')
     def __init__(self,depotcoords,coords,*morecoords) -> None:
-        self.nodes = [(0,depotcoords)]
-        for i in range(coords.shape[0]):
+        if morecoords :
+            self.coords = np.concatenate((coords, morecoords), axis=0)
+        else:
+            self.coords = coords
+        self.nodes = [(0,depotcoords)]    
+
+        for i in range(self.coords.shape[0]):
             self.nodes.append([i + 1,coords[i]])
-        n = coords.shape[0] + 2;
+        n = self.coords.shape[0] + 2;
+
         self.nodes = [(n,depotcoords)]
 
-        self.coords = np.vstack((depotcoords,coords))
+        depotcoords = np.expand_dims(depotcoords, axis=0)
+        self.coords = np.concatenate((depotcoords, self.coords), axis=0)
         print(self.coords)
         self.dist_matrix = self.gmaps.distance_matrix(self.coords,self.coords)
         self.times,self.distances =   [self.getmatrix(self.dist_matrix,"duration",n-1),

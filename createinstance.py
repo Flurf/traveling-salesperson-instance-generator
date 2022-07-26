@@ -6,17 +6,25 @@ from calcSavings import calcSavings
 from instance.Area import Area  
 from instance.Circle import Circle  
 from instance.Square import Square  
-from instance.writetodat import writetodat
+from instance.writetodat import *
 from instance.Graph import Graph
-
 
 nlocations = 9
 milano = np.array([45.46849353081034, 9.182678872770355])
+bovisacampus = np.array([45.501913216243466, 9.155222881632804])
+
 resta = Circle('instance1',nlocations,milano,10,10)
+graph = Graph(bovisacampus,resta.geocoord)
 
-graph = Graph(milano,resta.geocoord)
+data = [(graph.times,'times'),(graph.distances,'distances')]
+writetodat('tsp3',data)
 
-writetodat('tsp2.dat',[(graph.times,'times'),(graph.distances,'distances')])
+nlocations = np.array(nlocations)
+data.append((graph.coords,'coordinates'))
+writetotxt('tsp3',data)
+
+print(graph.coords[0])
+print(graph.coords[1].ndim)
 
 
 
