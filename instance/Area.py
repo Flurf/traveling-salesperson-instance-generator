@@ -39,8 +39,8 @@ class Area:
     def latlongfromdistance(self,x,y,lat0,long0):
         lat0 = np.sin(np.deg2rad(lat0))
         long0 = np.sin(np.deg2rad(long0))
-        long  = np.rad2deg(np.arcsin(long0 + (x / self.R )))  #degrees
-        lat   = np.rad2deg(np.arcsin(lat0 + (y / self.R )))   #degrees
+        long  = np.rad2deg(np.arcsin(long0 + (y / self.R )))  #degrees
+        lat   = np.rad2deg(np.arcsin(lat0 + (x / self.R )))   #degrees
         coords = np.array([lat,long]).transpose()
         return coords
 
