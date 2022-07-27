@@ -37,8 +37,10 @@ class Area:
         return d    #kilometers
 
     def latlongfromdistance(self,x,y,lat0,long0):
-        long  = np.rad2deg(x / (self.R )) + long0 #degrees
-        lat   = np.rad2deg(y / (self.R )) + lat0  #degrees
+        lat0 = np.sin(np.deg2rad(lat0))
+        long0 = np.sin(np.deg2rad(long0))
+        long  = np.rad2deg(np.arcsin(long0 + (x / self.R )))  #degrees
+        lat   = np.rad2deg(np.arcsin(lat0 + (y / self.R )))   #degrees
         coords = np.array([lat,long]).transpose()
         return coords
 
