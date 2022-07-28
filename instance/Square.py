@@ -22,5 +22,8 @@ class Square(Area):
         super().plot(x, y)
         rectangle = plt.Rectangle((-L/2,-L/2), L, L, fc="none",ec="black", linewidth=3)
         plt.gca().add_patch(rectangle)
+        axlim = L*(1+0.05)/2
+        plt.xlim([-axlim, axlim])
+        plt.ylim([-axlim, axlim])
+        plt.savefig(self.name + '.png', transparent=True)
         plt.show()
-        plt.savefig(self.name + '.png')
