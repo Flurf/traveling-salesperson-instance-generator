@@ -25,5 +25,5 @@ class Square(Area):
         axlim = L*(1+0.05)/2
         plt.xlim([-axlim, axlim])
         plt.ylim([-axlim, axlim])
-        plt.savefig(self.name + '.png', transparent=True)
+        plt.savefig('outputs\\' + self.name + '.png', transparent=True)
         plt.show()

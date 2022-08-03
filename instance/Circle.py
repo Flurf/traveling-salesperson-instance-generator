@@ -28,6 +28,6 @@ class Circle(Area):
         axlim = R*(1+0.03)
         plt.xlim([-axlim, axlim])
         plt.ylim([-axlim, axlim])
-        plt.savefig(self.name + '.png', transparent=True)
+        plt.savefig('outputs\\' + self.name + '.png', transparent=True)
         plt.show()
         

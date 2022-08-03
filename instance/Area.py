@@ -37,7 +37,7 @@ class Area:
         return d    #kilometers
 
     def latlongfromdistance(self,x,y,lat0,long0):
-        scalefactor = 1/np.cos(lat0)
+        scalefactor = 1/np.cos(np.deg2rad(lat0))
         x,y = [x*scalefactor,y*scalefactor]
         y0 = self.R*np.log(np.tan(np.pi/4 + np.deg2rad(lat0)/2))
         long  = long0 + np.rad2deg(x/self.R)  #degrees
