@@ -2,7 +2,6 @@ from turtle import end_fill
 import googlemaps
 import numpy as np
 from datetime import datetime
-from calcSavings import calcSavings
 from instance.Area import Area  
 from instance.Circle import Circle  
 from instance.Square import Square  
