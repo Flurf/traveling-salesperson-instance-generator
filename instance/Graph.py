@@ -4,7 +4,8 @@ import googlemaps
 from datetime import datetime
 class Graph:
     firstdayoflessons = datetime(2022,8,8,8)
-    gmaps = googlemaps.Client(key='AIzaSyCu-ipThu3ZSWXvPT_e0NaS4Bp5dsJnzOQ')
+    #insert your google maps key here
+    gmaps = googlemaps.Client(key='lebimbediferruccio')
     def __init__(self,depotcoords,coords,*morecoords) -> None:
         if morecoords :
             self.coords = np.concatenate((coords, morecoords), axis=0)
