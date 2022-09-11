@@ -5,7 +5,7 @@ The user can either choose to generate random geographical coordinates inside a 
 ## Requirements
 - Python 3.10 
 - package installer for Python (pip)
-- A Google Maps API key (for more details refer to [google-maps-services-python](https://console.cloud.google.com/apis/credentials))
+- A Google Maps API key (for more details refer to [google-maps-services-python](https://github.com/googlemaps/google-maps-services-python))
 
 ## Installation
 The Google Maps client needs to be installed as an external package
