@@ -43,6 +43,7 @@ nlocations = 9
 milano = np.array([45.46849353081034, 9.182678872770355])
 bovisacampus = np.array([45.501913216243466, 9.155222881632804])
 
+#reference area in which random locations will be bositioned, 7 km range in this case
 area = Square(name,nlocations,milano,7,7)
 # in alternative to random generation, coordinates can be passed to the Graph class 
 #coords = np.array(  [
