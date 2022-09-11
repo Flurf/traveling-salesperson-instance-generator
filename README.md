@@ -11,7 +11,9 @@ The user can either choose to generate random geographical coordinates inside a 
 The Google Maps client needs to be installed as an external package
 
     $ pip install -U googlemaps
+## Output sample
 
+![example of the solution of a FLYING traveling salesperson problem for different drone endurances, solved with AMPL. ](http://https://github.com/Flurf/traveling-salesperson-instance-generator/blob/main/output.png)
 ## Usage
 
 This example generates random locations in the Milan city area, the depot location is set to Bovisa's campus:
