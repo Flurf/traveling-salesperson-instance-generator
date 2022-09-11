@@ -64,6 +64,7 @@ data = [(graph.times,'times'),(graph.distances,'distances')]
 
 data.append((graph.coords,'coordinates'))
 
+#in printing to file, the depot location will be always the first coordinate 
 writetodat(name,data)
 writetotxt(name,data)
 
