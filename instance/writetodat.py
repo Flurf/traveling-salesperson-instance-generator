@@ -35,7 +35,7 @@ def writetodat(filename,params):
 
 #function that puts variables in a readable format
 def writetotxt(filename,params):
-    f = open('outputs\\' +filename + '.txt', "a")
+    f = open('outputs\\' + filename + '.txt', "a")
 
     for i in params:
         if i[0].ndim == 0:

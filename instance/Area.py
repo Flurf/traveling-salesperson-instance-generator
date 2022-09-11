@@ -5,7 +5,7 @@ class Area:
     R = 6371.0        #earth radius [km], may vary, very high accuracy not important 
     def __init__(self, name, ncoords, origin, scale_factor, L):
         self.name = name    
-        #number of coordinates to be displaced in the area with the given seed
+        #number of coordinates to be displaced in the area
         self.ncoords = ncoords    
         self.origin = origin    #center of the area 
         self.scale_factor = scale_factor      #scale factor

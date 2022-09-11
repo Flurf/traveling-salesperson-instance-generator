@@ -1,12 +1,12 @@
 from ctypes import sizeof
 import numpy as np
 import googlemaps
-from datetime import datetime
 class Graph:
-    firstdayoflessons = datetime(2022,8,8,8)
+   
     #insert your google maps key here
-    gmaps = googlemaps.Client(key='lebimbediferruccio')
-    def __init__(self,depotcoords,coords,*morecoords) -> None:
+    
+    def __init__(self,mykey,departure,depotcoords,coords,*morecoords) -> None:
+        gmaps = googlemaps.Client(key=mykey)
         if morecoords :
             self.coords = np.concatenate((coords, morecoords), axis=0)
         else:
@@ -22,8 +22,12 @@ class Graph:
         depotcoords = np.expand_dims(depotcoords, axis=0)
         self.coords = np.concatenate((depotcoords, self.coords), axis=0)
         print(self.coords)
-        self.dist_matrix = self.gmaps.distance_matrix(self.coords,self.coords,mode="driving",
+        if departure != 'none':
+            self.dist_matrix = gmaps.distance_matrix(self.coords,self.coords,mode="driving",
                                                         departure_time = self.firstdayoflessons)
+        else:
+            self.dist_matrix = gmaps.distance_matrix(self.coords,self.coords,mode="driving")
+        
         self.times,self.distances =   [self.getmatrix(self.dist_matrix,"duration",n-1),
                                         self.getmatrix(self.dist_matrix,"distance",n-1)]
         print(self.dist_matrix)
