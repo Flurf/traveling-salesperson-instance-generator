@@ -12,7 +12,7 @@ The Google Maps client needs to be installed as an external package
 
     $ pip install -U googlemaps
 ## Output sample
-example of the solution of a FLYING traveling salesperson problem for different drone endurances, solved with [AMPL](https://ampl.com/). The reference area, the customer's nodes and the depot location are generated with the code example below.
+example of the solution of a FLYING SIDEKICK traveling salesperson problem for different drone endurances, solved with [AMPL](https://ampl.com/). The reference area, the customer's nodes and the depot location are generated with the code example below.
 ![helo](https://github.com/Flurf/traveling-salesperson-instance-generator/blob/main/output.png)
 
 ## Usage
